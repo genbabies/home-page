@@ -26,8 +26,8 @@
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setNav(false); });
 
   /* ---------- Header tool buttons ---------- */
-  $('#sound').addEventListener('click', () => GB.setSound(!GB.sound));
-  $('#motion').addEventListener('click', () => GB.setPaused(!GB.isPaused()));
+  $('#sound')?.addEventListener('click', () => GB.setSound(!GB.sound));
+  $('#motion')?.addEventListener('click', () => GB.setPaused(!GB.isPaused()));
 
   /* ---------- Bedtime mode ---------- */
   const bedtimeBtn = $('#bedtime');
