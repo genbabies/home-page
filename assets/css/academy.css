@@ -1,0 +1,160 @@
+/* ==========================================================================
+   GEN A SUPER INTELLIGENCE ACADEMY — "Launching Soon"
+   A deliberately separate world: bright royal blue, sunburst gold and a
+   red ribbon (taken from the Gen A banner). Unaffected by bedtime mode.
+   ========================================================================== */
+
+.academy {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding-block: clamp(80px, 11vw, 140px);
+  border-top: 6px solid var(--gold-400);
+  background:
+    radial-gradient(70% 60% at 50% -5%, #7cc4ff 0%, transparent 70%),
+    linear-gradient(180deg, #2f74f0 0%, #1c57d6 50%, #0f2f8c 100%);
+  color: #fff;
+}
+
+/* Sunburst */
+.academy-rays {
+  position: absolute;
+  inset: -30% -10% auto -10%;
+  height: 130%;
+  z-index: -1;
+  background: repeating-conic-gradient(from 0deg at 50% -8%, rgba(255, 236, 160, .28) 0 4deg, transparent 4deg 11deg);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 68%);
+  mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 68%);
+  animation: rays-turn 90s linear infinite;
+  transform-origin: 50% 0;
+}
+@keyframes rays-turn { to { transform: rotate(360deg); } }
+
+.academy-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 80px);
+}
+
+.academy-copy { display: grid; gap: 24px; justify-items: start; }
+
+.academy-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .16);
+  border: 1px solid rgba(255, 255, 255, .3);
+  backdrop-filter: blur(8px);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.academy-kicker i {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  box-shadow: 0 0 0 4px rgba(255, 200, 58, .3);
+}
+
+.academy h2 {
+  color: #fff;
+  font-size: clamp(2.3rem, 4.6vw, 3.8rem);
+  text-shadow: 0 4px 24px rgba(6, 20, 61, .35);
+}
+.academy h2 em {
+  background: var(--gold-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.academy-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  color: var(--gold-300);
+}
+
+/* Red "Launching Soon" ribbon */
+.ribbon-badge {
+  position: relative;
+  display: inline-block;
+  margin-block: 6px;
+  filter: drop-shadow(0 14px 18px rgba(6, 20, 61, .4));
+}
+.ribbon-text {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 18px 76px 18px 48px;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -.01em;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 3px 0 rgba(10, 31, 92, .55);
+  background: linear-gradient(180deg, #f2393d, #cf1b20);
+  box-shadow: inset 0 4px 0 var(--gold-400), inset 0 -4px 0 var(--gold-400);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 50%, 100% 100%, 0 100%, 20px 50%);
+}
+.ribbon-text b { color: var(--gold-400); font-weight: 800; }
+.ribbon-text::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, .45) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: ribbon-shine 4.5s ease-in-out infinite;
+}
+@keyframes ribbon-shine { 55%, 100% { transform: translateX(120%); } }
+
+.ribbon-rocket {
+  position: absolute;
+  right: -14px;
+  top: -34px;
+  width: 64px; height: 64px;
+  transform: rotate(40deg);
+  animation: rocket-bob 3.2s ease-in-out infinite;
+}
+@keyframes rocket-bob {
+  50% { transform: rotate(40deg) translate(5px, -7px); }
+}
+
+.academy-note { max-width: 28em; color: rgba(255, 255, 255, .86); font-size: 1rem; }
+
+/* Banner frame */
+.academy-visual { position: relative; }
+.academy-visual::before {
+  content: '';
+  position: absolute;
+  inset: -6%;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgba(255, 224, 138, .55), transparent 72%);
+}
+.academy-frame {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 6px solid #fff;
+  box-shadow: 0 0 0 2px var(--gold-400), 0 40px 80px rgba(6, 20, 61, .5);
+  background: var(--sky-200);
+  transform: rotate(-1.2deg);
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+.academy-frame:hover { transform: rotate(0deg) scale(1.015); }
+.academy-frame img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+
+@media (max-width: 980px) {
+  .academy-grid { grid-template-columns: 1fr; }
+  .academy-frame { transform: none; }
+}
+
+@media (max-width: 680px) {
+  .ribbon-text { padding: 16px 60px 16px 38px; }
+  .ribbon-rocket { width: 52px; height: 52px; top: -28px; }
+}

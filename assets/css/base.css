@@ -1,0 +1,218 @@
+/* ==========================================================================
+   BASE — design tokens, reset, typography, layout primitives
+   Palette is drawn from the Gen A banner: sky blue, royal navy, gold, red.
+   ========================================================================== */
+
+:root {
+  /* Navy / blue */
+  --navy-950: #06143d;
+  --navy-900: #0a1f5c;
+  --navy-800: #10308a;
+  --blue-600: #1c57d6;
+  --blue-500: #2f74f0;
+
+  /* Sky */
+  --sky-300: #8fd0ff;
+  --sky-200: #cfe9ff;
+  --sky-100: #e9f5ff;
+  --sky-50:  #f5faff;
+
+  /* Gold */
+  --gold-300: #ffe08a;
+  --gold-400: #ffc83a;
+  --gold-500: #f4a712;
+  --gold-700: #a8680a;
+
+  /* Accent red (ribbon) */
+  --red-500: #e3262b;
+  --red-600: #c41a1f;
+
+  /* Semantic (overridden in bedtime mode) */
+  --bg: var(--sky-50);
+  --surface: #ffffff;
+  --surface-soft: var(--sky-100);
+  --text: var(--navy-900);
+  --muted: #4d628f;
+  --line: rgba(16, 48, 138, .12);
+
+  /* Gradients */
+  --gold-grad: linear-gradient(135deg, #ffe08a 0%, #ffc83a 45%, #f4a712 100%);
+  --blue-grad: linear-gradient(135deg, #2f74f0 0%, #10308a 100%);
+  --navy-grad: linear-gradient(160deg, #10308a 0%, #0a1f5c 55%, #06143d 100%);
+
+  /* Type */
+  --font-display: 'Outfit', 'Trebuchet MS', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Shape */
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+  --radius-xl: 44px;
+
+  /* Depth */
+  --shadow-sm: 0 2px 8px rgba(10, 31, 92, .08);
+  --shadow-md: 0 12px 32px rgba(10, 31, 92, .12);
+  --shadow-lg: 0 30px 70px rgba(10, 31, 92, .22);
+  --shadow-gold: 0 10px 28px rgba(244, 167, 18, .38);
+
+  /* Layout */
+  --container: 1240px;
+  --gutter: clamp(20px, 5vw, 48px);
+  --header-h: 80px;
+}
+
+/* Bedtime mode swaps the semantic tokens only */
+body.night {
+  --bg: #070f2b;
+  --surface: #0f1c4d;
+  --surface-soft: #0c1740;
+  --text: #eaf1ff;
+  --muted: #a9b9e3;
+  --line: rgba(255, 255, 255, .12);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 12px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color .6s ease, color .6s ease;
+}
+
+img, svg, canvas { display: block; max-width: 100%; }
+img { height: auto; }
+button { font: inherit; color: inherit; cursor: pointer; touch-action: manipulation; }
+a { color: inherit; text-decoration: none; touch-action: manipulation; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, p, figure, blockquote { margin: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--gold-500);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 200;
+  padding: 10px 18px;
+  background: var(--gold-400);
+  color: var(--navy-900);
+  font-weight: 700;
+  border-radius: 10px;
+  transition: top .2s;
+}
+.skip-link:focus { top: 12px; }
+
+/* ---------- Typography ---------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  color: var(--text);
+}
+
+h1 { font-size: clamp(2.7rem, 5.4vw, 4.6rem); font-weight: 800; }
+h2 { font-size: clamp(2rem, 3.8vw, 3.2rem); }
+h3 { font-size: 1.35rem; letter-spacing: -.01em; }
+
+/* Accent words: elegant gold-ish serif italic */
+h1 em, h2 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  background: linear-gradient(120deg, var(--blue-600), var(--navy-800));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--blue-600);
+  padding-right: .08em;
+}
+
+p { color: var(--muted); }
+
+.lead { font-size: clamp(1.05rem, 1.4vw, 1.2rem); max-width: 34em; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+}
+.eyebrow::before {
+  content: '';
+  width: 34px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--gold-grad);
+}
+.eyebrow-center { justify-content: center; }
+
+/* ---------- Layout primitives ---------- */
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: clamp(64px, 9vw, 120px); }
+.section-tight { padding-block: clamp(28px, 4vw, 56px); }
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px 48px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+.section-head > div { display: grid; gap: 18px; }
+.section-head > p { max-width: 380px; font-size: .98rem; }
+
+/* ---------- Scroll reveal (only when JS is available) ---------- */
+/* Uses the individual `translate` property so it never fights the
+   `transform` used by the hover-tilt effect on cards. */
+.js .reveal {
+  opacity: 0;
+  translate: 0 26px;
+  transition: opacity .8s cubic-bezier(.2, .7, .2, 1), translate .8s cubic-bezier(.2, .7, .2, 1);
+}
+.js .reveal.in { opacity: 1; translate: 0 0; }
+
+/* ---------- Motion preferences ---------- */
+body.paused *, body.paused *::before, body.paused *::after {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .js .reveal { opacity: 1; translate: none; }
+}
