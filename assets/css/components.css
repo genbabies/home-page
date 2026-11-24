@@ -153,8 +153,17 @@
 }
 @keyframes trail { to { transform: translateY(-60px) rotate(120deg); opacity: 0; } }
 
-/* ---------- Logo (logo.jpeg lives at the site root) ---------- */
-.site-logo { height: 52px; width: auto; display: block; }
-.site-footer .brand { padding: 6px 12px; border-radius: 14px; background: #fff; }
-.site-footer .site-logo { height: 40px; }
-@media (max-width: 680px) { .site-logo { height: 44px; } }
+/* ---------- Logo (logo.jpeg lives at the site root) ----------
+   The artwork is a square with generous empty margins, so it is cropped
+   to its visible content with object-fit instead of being shrunk. */
+.site-logo {
+  display: block;
+  width: 108px;
+  height: 70px;
+  object-fit: cover;
+  object-position: 50% 51%;
+  mix-blend-mode: multiply;   /* hides the logo's off-white backdrop */
+}
+.site-footer .brand { padding: 4px; border-radius: 14px; background: #f7f7f7; }
+.site-footer .site-logo { width: 96px; height: 62px; }
+@media (max-width: 680px) { .site-logo { width: 90px; height: 58px; } }
