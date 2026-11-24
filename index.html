@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gen Babies™ — A World of Wonder</title>
+  <meta name="description" content="Discover a joyful preschool learning world with counting, phonics, shapes, stories and gentle adventures for ages 2–6.">
+  <meta name="theme-color" content="#0a1f5c">
+
+  <!-- Social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gen Babies™ — A World of Wonder">
+  <meta property="og:description" content="Big wonder. Little explorers. Endless magic.">
+  <meta property="og:image" content="https://gen-babies.com/assets/images/hero-1.webp">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/academy.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ════════════ HEADER ════════════ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Gen Babies home">
+        <img class="site-logo" src="logo.jpeg" alt="Gen Babies" height="52">
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Primary">
+        <a href="#wonder">3D world</a>
+        <a href="#friends">Our friends</a>
+        <a href="#songs">Songs &amp; stories</a>
+        <a href="#parents">For parents</a>
+        <a href="#gen-a" class="nav-soon">Gen A Academy <span>Soon</span></a>
+        <a class="btn btn-gold btn-sm nav-cta" href="#play">Let’s play <span aria-hidden="true">↗</span></a>
+      </nav>
+
+      <div class="header-tools">
+        <button class="tool" id="sound" type="button" aria-pressed="false" aria-label="Toggle sound">
+          <span class="tool-icon" aria-hidden="true">🔇</span><span class="tool-label">Sound off</span>
+        </button>
+        <button class="tool" id="motion" type="button" aria-pressed="false" aria-label="Pause or play animation">
+          <span class="tool-icon" aria-hidden="true">⏸</span><span class="tool-label">Pause</span>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ════════════ HERO ════════════ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Welcome to a world of wonder</div>
+          <h1>Big wonder.<br>Little explorers.<br><em>Endless magic.</em></h1>
+          <p class="lead">Step into a colorful adventure with Pillu, Mira, Fenni, Beaky and Keyboard. Sing, play, discover — and let your imagination soar.</p>
+
+          <div class="actions">
+            <a class="btn btn-gold" href="#friends">Start your adventure <span aria-hidden="true">✦</span></a>
+            <a class="btn btn-ghost" href="https://www.youtube.com/@GenBabiesTM" target="_blank" rel="noopener">▶ Watch our songs</a>
+          </div>
+
+          <ul class="trust">
+            <li>✧ Ages 2–6</li>
+            <li>♡ Play at your pace</li>
+            <li>🌿 Grow with curiosity</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-frame" id="hero-slider" aria-roledescription="carousel" aria-label="Gen Babies adventures">
+            <img class="hero-slide is-active" src="assets/images/hero-1.webp" width="1600" height="600" alt="All five Gen Babies friends at the Rainbow Discovery Festival">
+            <img class="hero-slide" src="assets/images/hero-2.webp" width="1600" height="640" alt="The five friends building a toy rocket in a sky adventure" loading="lazy">
+            <img class="hero-slide" src="assets/images/hero-3.webp" width="1600" height="600" alt="The five friends reading together in Starlight Story Village" loading="lazy">
+            <div class="hero-dots" role="tablist" aria-label="Choose a scene">
+              <button type="button" class="is-active" role="tab" aria-selected="true" aria-label="Scene 1"></button>
+              <button type="button" role="tab" aria-selected="false" aria-label="Scene 2"></button>
+              <button type="button" role="tab" aria-selected="false" aria-label="Scene 3"></button>
+            </div>
+          </div>
+
+          <div class="feature-cards">
+            <div class="feature-card"><span class="fc-icon" aria-hidden="true">🌈</span><div><b>Play &amp; discover</b><small>Little games. Big smiles.</small></div></div>
+            <div class="feature-card"><span class="fc-icon" aria-hidden="true">🎵</span><div><b>Sing &amp; imagine</b><small>Stories full of wonder.</small></div></div>
+            <div class="feature-card"><span class="fc-icon" aria-hidden="true">✨</span><div><b>Grow together</b><small>Five friends. Endless fun.</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ MARQUEE ════════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>♫ Sing along</span><span>✧ Think &amp; discover</span><span>♡ Practice kindness</span><span>☾ Dream a little</span>
+        <span>♫ Sing along</span><span>✧ Think &amp; discover</span><span>♡ Practice kindness</span><span>☾ Dream a little</span>
+        <span>♫ Sing along</span><span>✧ Think &amp; discover</span><span>♡ Practice kindness</span><span>☾ Dream a little</span>
+      </div>
+    </div>
+
+    <!-- ════════════ 3D WONDER WORLD ════════════ -->
+    <section class="wonder" id="wonder">
+      <div class="container">
+        <div class="section-head on-dark reveal">
+          <div>
+            <div class="eyebrow">A little universe of possibilities</div>
+            <h2>Gen Babies World.<br><em>Touch. Try. Discover.</em></h2>
+          </div>
+          <p>Choose what to learn. Tap a 3D toy, then try a simple activity below. There’s no timer — every little discovery counts.</p>
+        </div>
+
+        <ol class="steps reveal">
+          <li><b>1</b> Choose a topic</li>
+          <li><b>2</b> Tap a 3D toy</li>
+          <li><b>3</b> Try it below</li>
+        </ol>
+
+        <div class="stage reveal">
+          <canvas id="wonder3d" role="img" aria-label="Interactive learning world with ABCD letter blocks, numbers, shapes and animals"></canvas>
+          <div class="stage-top">
+            <span>✧ GEN BABIES WONDER WORLD</span>
+            <span id="space-status" aria-live="polite">Tap letters, numbers, shapes or animals ✨</span>
+          </div>
+          <div class="stage-bottom">
+            <button type="button" data-scene="garden" class="active">🌿 Learning garden</button>
+            <button type="button" data-scene="space">🚀 Space explorers</button>
+            <button type="button" data-scene="rainbow">🌈 Rainbow party</button>
+            <button type="button" id="sparkle">✨ Make a little magic</button>
+          </div>
+        </div>
+
+        <p class="stage-note">Tap a learning toy, then play the activity below. No popups, no rush.</p>
+
+        <div class="learning-panel reveal" id="inline-learning">
+          <div class="learning-tabs" role="tablist">
+            <button type="button" data-learn="letters" class="active">🔤 ABCD</button>
+            <button type="button" data-learn="numbers">🔢 Numbers</button>
+            <button type="button" data-learn="shapes">🔺 Shapes</button>
+            <button type="button" data-learn="animals">🐾 Animals</button>
+          </div>
+          <div id="learning-board" aria-live="polite"></div>
+        </div>
+
+        <div class="tips reveal">
+          <article><h3>🔤 Find a letter</h3><p>Look at a book cover together. Can you spot A? Trace its shape in the air.</p></article>
+          <article><h3>🔢 Count real things</h3><p>Put three spoons on the table. Touch each spoon once and say 1, 2, 3.</p></article>
+          <article><h3>🟠 Hunt for shapes</h3><p>Find a round plate and a ball. One is flat like a circle; one is solid like a sphere.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ CHARACTERS ════════════ -->
+    <section class="friends" id="friends">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Different minds. One wonderful world.</div>
+            <h2>Meet your <em>Gen Babies</em> friends.</h2>
+          </div>
+          <p>Five curious personalities. So many ways to explore, learn, be kind and grow together.</p>
+        </div>
+
+        <div class="characters">
+          <article class="character tilt reveal" style="--accent:#c77724">
+            <div class="character-art"><img src="assets/images/pillu.webp" width="900" height="900" alt="Pillu the bear exploring a sunny garden with a magnifying glass" loading="lazy"></div>
+            <h3>Pillu</h3>
+            <span class="role">The Curious One</span>
+            <p>Loves nature, science and how things work. Always asking “Why?”</p>
+            <button type="button" data-friend="animal">Explore with Pillu <span aria-hidden="true">↗</span></button>
+          </article>
+
+          <article class="character tilt reveal" style="--accent:#a64bc2">
+            <div class="character-art"><img src="assets/images/mira.webp" width="900" height="900" alt="Mira the bunny holding a number card beside colorful blocks" loading="lazy"></div>
+            <h3>Mira</h3>
+            <span class="role">The Smart One</span>
+            <p>Confident, quick-thinking and great at problem solving. Loves math, logic and finding answers.</p>
+            <button type="button" data-friend="count">Explore with Mira <span aria-hidden="true">↗</span></button>
+          </article>
+
+          <article class="character tilt reveal" style="--accent:#2f9a5a">
+            <div class="character-art"><img src="assets/images/fenni.webp" width="900" height="900" alt="Fenni the fox on a wooden bridge holding a treasure map" loading="lazy"></div>
+            <h3>Fenni</h3>
+            <span class="role">The Adventurer</span>
+            <p>Brave, energetic and ready for a challenge. Loves experimenting, exploration and new things.</p>
+            <button type="button" data-friend="invent">Explore with Fenni <span aria-hidden="true">↗</span></button>
+          </article>
+
+          <article class="character tilt reveal" style="--accent:#1f78d1">
+            <div class="character-art"><img src="assets/images/beaky.webp" width="900" height="900" alt="Beaky the penguin dancing on a sunny beach" loading="lazy"></div>
+            <h3>Beaky</h3>
+            <span class="role">The Kind One</span>
+            <p>Loves animals, the ocean, music and making friends. Caring, cheerful and always looks out for others.</p>
+            <button type="button" data-friend="kind">Explore with Beaky <span aria-hidden="true">↗</span></button>
+          </article>
+
+          <article class="character tilt reveal" style="--accent:#5b5fd0">
+            <div class="character-art"><img src="assets/images/keyboard.webp" width="900" height="900" alt="Keyboard the baby robot waving in a garden full of gadgets" loading="lazy"></div>
+            <h3>Keyboard</h3>
+            <span class="role">The Baby Robot</span>
+            <p>Loves AI, technology, coding and the future. Curious about gadgets and how our minds work.</p>
+            <button type="button" data-friend="invent">Explore with Keyboard <span aria-hidden="true">↗</span></button>
+          </article>
+        </div>
+        <p class="scroll-note">Swipe sideways to meet all five friends ↔</p>
+      </div>
+    </section>
+
+    <!-- ════════════ DISCOVERY LAB ════════════ -->
+    <section class="section lab-section" id="play">
+      <div class="container">
+        <div class="lab reveal">
+          <div class="lab-copy">
+            <span class="tag">The little discovery lab · Interactive demo</span>
+            <h2>Small games.<br>Happy “I did it!”<br><em>moments.</em></h2>
+            <p>Count an apple. Find a shape. Meet a letter. A little practice can become a lovely adventure.</p>
+            <div class="tabs" role="tablist">
+              <button type="button" class="tab active" data-game="count">Counting</button>
+              <button type="button" class="tab" data-game="shape">Shapes</button>
+              <button type="button" class="tab" data-game="letter">Phonics</button>
+            </div>
+            <small>Take your time. There’s no race here. 🌱</small>
+          </div>
+          <div class="playbox" id="game"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ SONGS & STORIES ════════════ -->
+    <section class="section" id="songs">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">A little melody. A little magic.</div>
+            <h2>Sing, imagine, <em>discover.</em></h2>
+          </div>
+          <a class="btn btn-outline" href="https://www.youtube.com/@GenBabiesTM" target="_blank" rel="noopener">Visit our YouTube ↗</a>
+        </div>
+
+        <div class="songs">
+          <a class="song tilt reveal" href="https://www.youtube.com/@GenBabiesTM" target="_blank" rel="noopener">
+            <div class="poster"><img src="assets/images/mira.webp" width="900" height="900" alt="Illustrated learning adventure with Mira" loading="lazy"><span class="play">▶</span></div>
+            <div class="song-text">
+              <span class="kicker">Explore on YouTube</span>
+              <h3>Letters come to life</h3>
+              <p>Discover the channel’s songs and preschool learning videos.</p>
+            </div>
+          </a>
+
+          <button type="button" class="song tilt reveal" data-story="garden">
+            <div class="poster"><img src="assets/images/pillu.webp" width="900" height="900" alt="Illustrated garden adventure with Pillu" loading="lazy"><span class="play">📖</span></div>
+            <div class="song-text">
+              <span class="kicker">Sample story · Read together</span>
+              <h3>The little seed’s big day</h3>
+              <p>A gentle story about growing at your own pace.</p>
+            </div>
+          </button>
+
+          <button type="button" class="song tilt reveal" data-story="star">
+            <div class="poster"><img src="assets/images/beaky.webp" width="900" height="900" alt="Illustrated seaside adventure with Beaky" loading="lazy"><span class="play">🌙</span></div>
+            <div class="song-text">
+              <span class="kicker">Sample story · Bedtime</span>
+              <h3>A star says goodnight</h3>
+              <p>Slow down with a quiet, cozy evening adventure.</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ BEDTIME ════════════ -->
+    <section class="section section-tight">
+      <div class="container">
+        <div class="bedtime reveal">
+          <div class="bedtime-copy">
+            <span class="tag tag-gold">A softer end to the day</span>
+            <h2>When little eyes<br><em>get sleepy.</em></h2>
+            <p>Turn down the brightness, pause the movement, and share a quiet story together. A peaceful place to finish your adventure.</p>
+            <button type="button" class="btn btn-gold" id="bedtime">Enter bedtime mode ☾</button>
+          </div>
+          <div class="bedtime-art" aria-hidden="true">
+            <svg viewBox="0 0 260 220" role="presentation">
+              <defs>
+                <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
+                <linearGradient id="moonFill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4c9"/><stop offset="1" stop-color="#ffc83a"/></linearGradient>
+              </defs>
+              <circle cx="130" cy="100" r="95" fill="url(#moonGlow)"/>
+              <path d="M150 38a62 62 0 1 0 38 100A70 70 0 0 1 150 38z" fill="url(#moonFill)"/>
+              <g fill="#fff" class="twinkle">
+                <path d="M46 52l3 7 7 1-5 5 1 7-6-4-6 4 1-7-5-5 7-1z"/>
+                <path d="M214 70l2.5 6 6 .8-4.4 4.2 1 6-5.1-3-5.1 3 1-6-4.4-4.2 6-.8z"/>
+                <circle cx="70" cy="150" r="3"/><circle cx="200" cy="160" r="2.5"/><circle cx="32" cy="108" r="2"/><circle cx="232" cy="118" r="2"/>
+              </g>
+              <g fill="#fff" opacity=".92">
+                <ellipse cx="78" cy="188" rx="40" ry="14"/><ellipse cx="108" cy="180" rx="30" ry="14"/>
+                <ellipse cx="186" cy="192" rx="42" ry="13"/><ellipse cx="160" cy="184" rx="26" ry="12"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ PARENTS ════════════ -->
+    <section class="section" id="parents">
+      <div class="container">
+        <div class="parent reveal">
+          <figure class="parent-art">
+            <img src="assets/images/beaky.webp" width="900" height="900" alt="Beaky the kind penguin at a colorful seaside" loading="lazy">
+            <figcaption class="note">Curious today.<br>A brighter tomorrow.</figcaption>
+          </figure>
+          <div class="parent-copy">
+            <div class="eyebrow">A note for the grown-ups</div>
+            <h2>Made with a<br><em>parent’s heart.</em></h2>
+            <blockquote>“As a toddler dad, I created Gen Babies™ with a simple belief: children deserve more than content that simply keeps them watching.”</blockquote>
+            <p>They deserve music that makes them smile, stories that make them wonder, and meaningful learning that helps them understand the world.</p>
+            <ul class="benefits">
+              <li>🌿 Curiosity &amp; creativity</li>
+              <li>🔤 Early language</li>
+              <li>💛 Kindness &amp; good habits</li>
+              <li>🔢 Numbers &amp; reasoning</li>
+            </ul>
+            <p>Explore together, talk about what you notice, and carry the discovery into everyday life. No child account is needed for these activities.</p>
+          </div>
+        </div>
+
+        <div class="resource reveal">
+          <div class="resource-copy">
+            <span class="tag tag-navy">Point. Say. Discover together.</span>
+            <h3>Your toddler’s printable discovery pack.</h3>
+            <p>ABCD picture sheet, numbers 1–6, four shapes and two gentle stories. Add your baby’s first name to make the stories their own.</p>
+            <label class="field" for="pack-child">
+              <span>Baby’s first name (optional)</span>
+              <input id="pack-child" type="text" maxlength="30" placeholder="Little Explorer" autocomplete="off">
+            </label>
+            <small>Name stays on your device. The pack opens in a new tab — print it or save as PDF.</small>
+          </div>
+          <button type="button" class="btn btn-navy" id="open-pack">Open printable pack ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ FAQ ════════════ -->
+    <section class="section section-tight">
+      <div class="container">
+        <div class="faq reveal">
+          <div class="eyebrow">Good things to know</div>
+          <h2>For curious <em>parents.</em></h2>
+          <details>
+            <summary>Who is this learning world for?</summary>
+            <p>Gen Babies is designed for ages 2–6, with a grown-up nearby. Choose activities based on your child’s interests and comfort rather than a fixed pace.</p>
+          </details>
+          <details>
+            <summary>Are the games and stories real?</summary>
+            <p>The three discovery games work right here on the website. The two short stories are original sample content. YouTube links open the actual Gen Babies channel; no video titles or audience figures have been invented.</p>
+          </details>
+          <details>
+            <summary>How do sound and animation work?</summary>
+            <p>Sound starts off. Turn it on for gentle feedback tones in the games. Pause animation anytime, or use bedtime mode to pause it automatically. Your device’s reduced-motion setting is respected.</p>
+          </details>
+          <details>
+            <summary>Does this website save my child’s information?</summary>
+            <p>This website has no sign-in, forms, tracking code or child profiles. Activity progress stays in the current page and resets when you refresh. Fonts load from Google Fonts; opening YouTube takes you to that service.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ CTA ════════════ -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <div class="eyebrow eyebrow-center">The next little discovery starts here</div>
+          <h2 id="cta-title">Let curiosity <em>lead the way.</em></h2>
+          <p>One song. One story. One wonderful “why?” at a time.</p>
+          <a class="btn btn-gold btn-lg" href="#friends">Let’s explore together <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         GEN A SUPER INTELLIGENCE ACADEMY — separate venture
+         (independent of Gen Babies; own palette, own section)
+         ════════════════════════════════════════════════════════════ -->
+    <section class="academy" id="gen-a" aria-labelledby="academy-title">
+      <div class="academy-rays" aria-hidden="true"></div>
+      <div class="container academy-grid">
+
+        <div class="academy-copy reveal">
+          <span class="academy-kicker"><i aria-hidden="true"></i> A separate venture</span>
+          <h2 id="academy-title">Gen A Super Intelligence Academy <em>App</em></h2>
+          <p class="academy-tagline">Discover. Develop. Empower.</p>
+
+          <div class="ribbon-badge" role="status">
+            <span class="ribbon-text">Launching <b>Soon</b></span>
+            <svg class="ribbon-rocket" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 4c9 6 14 17 12 30l-6 6H26l-6-6C18 21 23 10 32 4z" fill="#fff"/>
+              <circle cx="32" cy="23" r="6" fill="#1c57d6" stroke="#0a1f5c" stroke-width="2"/>
+              <path d="M20 34l-10 10 2 8 10-6zM44 34l10 10-2 8-10-6z" fill="#e3262b"/>
+              <path d="M26 42h12l-3 14h-6z" fill="#ffc83a"/>
+            </svg>
+          </div>
+
+          <p class="academy-note">A brand-new learning app is on its way. Gen A Academy is its own world — independent of Gen Babies™.</p>
+        </div>
+
+        <figure class="academy-visual reveal">
+          <div class="academy-frame">
+            <img src="assets/images/gen-a-banner.webp" width="1600" height="900" alt="Gen A Super Intelligence Academy — Discover. Develop. Empower. Launching soon." loading="lazy">
+          </div>
+        </figure>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top" aria-label="Gen Babies home">
+        <img class="site-logo" src="logo.jpeg" alt="Gen Babies" height="52">
+      </a>
+      <p class="footer-tag">Curious today. A brighter tomorrow.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#wonder">3D world</a>
+        <a href="#friends">Our friends</a>
+        <a href="#songs">Songs &amp; stories</a>
+        <a href="#parents">For parents</a>
+        <a href="#gen-a">Gen A Academy</a>
+      </nav>
+      <p class="footer-copy">© 2026 Gen Babies™ · Curious today. A brighter tomorrow.</p>
+    </div>
+  </footer>
+
+  <!-- Story / topic dialog -->
+  <dialog class="modal" id="modal" aria-labelledby="modal-title">
+    <button class="modal-close" type="button" aria-label="Close">×</button>
+    <div id="modalbody"></div>
+  </dialog>
+
+  <script src="assets/js/core.js" defer></script>
+  <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/hero.js" defer></script>
+  <script src="assets/js/learning.js" defer></script>
+  <script src="assets/js/world3d.js" defer></script>
+  <script src="assets/js/lab.js" defer></script>
+  <script src="assets/js/stories.js" defer></script>
+  <script src="assets/js/pack.js" defer></script>
+</body>
+</html>
