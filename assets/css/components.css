@@ -156,14 +156,28 @@
 /* ---------- Logo (logo.jpeg lives at the site root) ----------
    The artwork is a square with generous empty margins, so it is cropped
    to its visible content with object-fit instead of being shrunk. */
-.site-logo {
+.site-logo,
+.hero-logo {
   display: block;
-  width: 108px;
-  height: 70px;
   object-fit: cover;
   object-position: 50% 51%;
+}
+.site-logo {
+  width: 132px;
+  height: 87px;
   mix-blend-mode: multiply;   /* hides the logo's off-white backdrop */
 }
+.hero-logo {
+  width: 300px;
+  height: 196px;
+  max-width: 100%;
+  border-radius: 28px;
+  background: #f7f7f7;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4.5px rgba(255, 200, 58, .8), var(--shadow-md);
+}
 .site-footer .brand { padding: 4px; border-radius: 14px; background: #f7f7f7; }
-.site-footer .site-logo { width: 96px; height: 62px; }
-@media (max-width: 680px) { .site-logo { width: 90px; height: 58px; } }
+.site-footer .site-logo { width: 110px; height: 72px; }
+@media (max-width: 680px) {
+  .site-logo { width: 104px; height: 68px; }
+  .hero-logo { width: 230px; height: 150px; }
+}
