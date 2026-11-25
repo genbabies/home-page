@@ -1,18 +1,15 @@
 /* ==========================================================================
    CONTACT PAGE
    - Mobile nav + header shadow (this page doesn't load ui.js)
-   - Sends the form to support@gen-babies.com through FormSubmit
-     (https://formsubmit.co) — a free relay that works on static hosting.
-     The very first submission makes FormSubmit email an activation link to
-     the support address; click it once and every later message is delivered.
-   - If anything fails, a prefilled mailto: link is offered instead.
+   - "Send" opens a ready-written email to support@gen-babies.com:
+     Gmail compose in a new tab on computers, or the phone's mail app
+     (mailto:) on touch devices. Nothing is sent from the website itself,
+     so no form service or account is needed.
    ========================================================================== */
 (function () {
   'use strict';
 
   const SUPPORT_EMAIL = 'support@gen-babies.com';
-  const ENDPOINT = 'https://formsubmit.co/ajax/' + SUPPORT_EMAIL;
-
   /* ---------- Header: shadow + mobile nav ---------- */
   const header = document.querySelector('.site-header');
   const nav = document.getElementById('main-nav');
@@ -34,33 +31,41 @@
   /* ---------- Form ---------- */
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
-  const sendBtn = document.getElementById('send-btn');
 
-  function setStatus(text, kind) {
-    status.className = 'form-status' + (kind ? ' ' + kind : '');
-    status.textContent = text;
+  const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
+  function buildEmail(data) {
+    return {
+      subject: 'Gen Babies website: ' + data.topic,
+      body: `Name: ${data.name}\nEmail: ${data.email}\nTopic: ${data.topic}\n\n${data.message}`,
+    };
   }
 
-  function mailtoLink(data) {
-    const body = `Name: ${data.name}\nEmail: ${data.email}\nTopic: ${data.topic}\n\n${data.message}`;
-    return `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent('Gen Babies website: ' + data.topic)}&body=${encodeURIComponent(body)}`;
-  }
+  const mailtoUrl = (mail) =>
+    `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(mail.subject)}&body=${encodeURIComponent(mail.body)}`;
 
-  function showFallback(data, reason) {
-    status.className = 'form-status err';
-    status.textContent = 'We couldn’t send that just now' + (reason ? ' (' + reason + ')' : '') + '. ';
+  const gmailUrl = (mail) =>
+    'https://mail.google.com/mail/?view=cm&fs=1' +
+    `&to=${encodeURIComponent(SUPPORT_EMAIL)}` +
+    `&su=${encodeURIComponent(mail.subject)}` +
+    `&body=${encodeURIComponent(mail.body)}`;
+
+  function showOpened(mail, usedGmail) {
+    status.className = 'form-status ok';
+    status.textContent = usedGmail
+      ? 'Your email is ready in Gmail — press Send there to finish. 💛 Didn’t open? '
+      : 'Your email app should open with the message ready — press Send to finish. 💛 Didn’t open? ';
     const link = document.createElement('a');
-    link.href = mailtoLink(data);
-    link.textContent = 'Email us instead';
+    link.href = usedGmail ? mailtoUrl(mail) : gmailUrl(mail);
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.textContent = usedGmail ? 'Use your email app instead' : 'Open in Gmail instead';
     status.appendChild(link);
     status.appendChild(document.createTextNode('.'));
   }
 
-  form.addEventListener('submit', async (event) => {
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
-
-    // Spam trap
-    if (form.elements._honey.value) return;
 
     const data = {
       name: form.elements.name.value.trim(),
@@ -78,38 +83,21 @@
       if (bad) valid = false;
     });
     if (!valid) {
-      setStatus('Please fill in your name, a valid email and a message.', 'err');
+      status.className = 'form-status err';
+      status.textContent = 'Please fill in your name, a valid email and a message.';
       return;
     }
 
-    sendBtn.disabled = true;
-    setStatus('Sending…');
+    const mail = buildEmail(data);
 
-    try {
-      const response = await fetch(ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          ...data,
-          _subject: 'Gen Babies website: ' + data.topic,
-          _template: 'table',
-          _captcha: 'false',
-        }),
-      });
-      const result = await response.json().catch(() => ({}));
-
-      if (response.ok && String(result.success) !== 'false') {
-        form.reset();
-        setStatus('Thank you! Your message is on its way. 💛', 'ok');
-      } else {
-        console.warn('FormSubmit response:', response.status, result);
-        showFallback(data, String(result.message || 'status ' + response.status).slice(0, 160));
-      }
-    } catch (err) {
-      console.warn('FormSubmit request failed:', err);
-      showFallback(data, 'network error');
-    } finally {
-      sendBtn.disabled = false;
+    if (isTouchDevice) {
+      // Phones/tablets: hand over to the mail app (Gmail app if it's the default)
+      window.location.href = mailtoUrl(mail);
+      showOpened(mail, false);
+    } else {
+      // Computers: Gmail compose in a new tab
+      window.open(gmailUrl(mail), '_blank', 'noopener');
+      showOpened(mail, true);
     }
   });
 
