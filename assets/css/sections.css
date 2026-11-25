@@ -4,6 +4,8 @@
    ========================================================================== */
 
 /* ─────────────────────────── HEADER ─────────────────────────── */
+:root { --header-h: 96px; }
+
 .site-header {
   position: sticky;
   top: 0;
@@ -631,6 +633,50 @@ body.night .feedback { color: #7be0a6; }
 .song-text h3 { font-size: 1.4rem; }
 .song-text p { font-size: .92rem; }
 
+/* ─────────────────────────── MUSIC BANNER ─────────────────────────── */
+.music {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(20px, 4vw, 48px);
+  padding: clamp(20px, 3vw, 32px) clamp(20px, 4vw, 48px);
+  border-block: 3px solid var(--gold-400);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(100deg, #fffaf0 0%, var(--surface) 45%, var(--surface-soft) 100%);
+  box-shadow: var(--shadow-md);
+}
+.music-cover {
+  width: clamp(120px, 14vw, 168px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 22px;
+  border: 3px solid var(--gold-400);
+  box-shadow: var(--shadow-md);
+}
+.music-copy { display: grid; gap: 8px; }
+.music-kicker { font-weight: 600; color: var(--muted); }
+.music h2 { font-size: clamp(1.5rem, 3vw, 2.3rem); }
+.music-links { display: grid; gap: 10px; min-width: 260px; }
+.music-btn {
+  display: block;
+  padding: 14px 26px;
+  border-radius: 999px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s, box-shadow .25s, filter .25s;
+}
+.music-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); filter: brightness(1.05); }
+.music-btn.spotify { background: #1db954; color: #06143d; }
+.music-btn.apple { background: #fa2d48; color: #fff; }
+.music-btn.amazon { background: #25d1da; color: #06143d; }
+
+@media (max-width: 860px) {
+  .music { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .music-links { width: 100%; max-width: 360px; }
+}
+
 /* ─────────────────────────── BEDTIME ─────────────────────────── */
 .bedtime {
   position: relative;
@@ -847,7 +893,7 @@ body.night .learning-option, body.night .choice { background: linear-gradient(18
 }
 
 @media (max-width: 980px) {
-  :root { --header-h: 72px; }
+  :root { --header-h: 84px; }
 
   .nav-toggle { display: block; }
 
