@@ -46,9 +46,9 @@
     return `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent('Gen Babies website: ' + data.topic)}&body=${encodeURIComponent(body)}`;
   }
 
-  function showFallback(data) {
+  function showFallback(data, reason) {
     status.className = 'form-status err';
-    status.textContent = 'We couldn’t send that just now. ';
+    status.textContent = 'We couldn’t send that just now' + (reason ? ' (' + reason + ')' : '') + '. ';
     const link = document.createElement('a');
     link.href = mailtoLink(data);
     link.textContent = 'Email us instead';
@@ -102,10 +102,12 @@
         form.reset();
         setStatus('Thank you! Your message is on its way. 💛', 'ok');
       } else {
-        showFallback(data);
+        console.warn('FormSubmit response:', response.status, result);
+        showFallback(data, String(result.message || 'status ' + response.status).slice(0, 160));
       }
     } catch (err) {
-      showFallback(data);
+      console.warn('FormSubmit request failed:', err);
+      showFallback(data, 'network error');
     } finally {
       sendBtn.disabled = false;
     }
