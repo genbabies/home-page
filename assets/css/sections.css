@@ -123,6 +123,16 @@
 }
 
 .hero h1 { font-size: clamp(2.5rem, 3.9vw, 3.7rem); }
+.h1-brand {
+  display: block;
+  margin-bottom: .18em;
+  font-size: .62em;
+  font-weight: 800;
+  letter-spacing: 0;
+  color: var(--blue-600);
+}
+.h1-brand sup { font-size: .45em; color: var(--gold-500); }
+
 
 .hero-grid {
   display: grid;
@@ -859,6 +869,11 @@ body.night .feedback { color: #7be0a6; }
 .footer-copy { flex-basis: 100%; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .1); font-size: .78rem; color: rgba(207, 233, 255, .6); }
 
 /* ─────────────────────────── BEDTIME-MODE OVERRIDES ─────────────────────────── */
+/* The header stays light (it matches the logo's backdrop), so keep its text dark */
+body.night .site-header { --text: #0a1f5c; --surface: #fff; --line: rgba(16, 48, 138, .12); }
+body.night .eyebrow { color: var(--gold-400); }
+body.night .h1-brand { color: var(--sky-200); }
+
 body.night .hero {
   background:
     radial-gradient(55% 70% at 88% 0%, rgba(255, 224, 138, .12) 0%, transparent 62%),
