@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Gen Babies™</title>
+  <meta name="description" content="Message Gen Babies™: song requests, suggestions, school program questions, or just a hello.">
+  <meta name="theme-color" content="#0a1f5c">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <nav class="main-nav" id="main-nav" aria-label="Primary">
+        <a href="index.html#wonder">3D world</a>
+        <a href="index.html#friends">Our friends</a>
+        <a href="index.html#songs">Songs &amp; stories</a>
+        <a href="index.html#parents">For parents</a>
+        <a href="index.html#gen-a" class="nav-soon">Gen A Academy <span>Soon</span></a>
+        <a href="contact.html" aria-current="page" class="is-current">Contact</a>
+        <a class="btn btn-gold btn-sm nav-cta" href="index.html#play">Let’s play <span aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="header-tools">
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="contact-hero">
+      <div class="container contact-grid">
+
+        <div class="contact-copy">
+          <div class="eyebrow">Say hello to Gen Babies™</div>
+          <h1>Message <em>us.</em></h1>
+          <p class="lead">Did one of our songs put a smile on your face? Or just want to share something with us? Go on — we’d love to hear from you.</p>
+
+          <ul class="contact-cards">
+            <li>
+              <span class="cc-icon" aria-hidden="true">✉️</span>
+              <div><b>Email</b><a href="mailto:support@gen-babies.com">support@gen-babies.com</a></div>
+            </li>
+            <li>
+              <span class="cc-icon" aria-hidden="true">▶️</span>
+              <div><b>YouTube</b><a href="https://www.youtube.com/@GenBabies" target="_blank" rel="noopener">youtube.com/@GenBabies</a></div>
+            </li>
+            <li>
+              <span class="cc-icon" aria-hidden="true">🎵</span>
+              <div><b>School programs</b><span>You are free to stream our songs at your school programs.</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-card">
+          <form id="contact-form" novalidate>
+            <h2>Send a message</h2>
+
+            <label class="field-row">
+              <span>Your name</span>
+              <input type="text" name="name" autocomplete="name" maxlength="80" required placeholder="e.g. Priya">
+            </label>
+
+            <label class="field-row">
+              <span>Email (so we can reply)</span>
+              <input type="email" name="email" autocomplete="email" maxlength="120" required placeholder="you@example.com">
+            </label>
+
+            <label class="field-row">
+              <span>What’s this about?</span>
+              <select name="topic">
+                <option>Song or video request</option>
+                <option>Suggestion</option>
+                <option>School program question</option>
+                <option>Feedback</option>
+                <option>Just saying hello</option>
+                <option>Something else</option>
+              </select>
+            </label>
+
+            <label class="field-row">
+              <span>Special requests or suggestions</span>
+              <textarea name="message" rows="5" maxlength="2000" required placeholder="Tell us what you’d love to see or hear…"></textarea>
+            </label>
+
+            <!-- Spam trap: real people never see or fill this -->
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+
+            <button class="btn btn-gold btn-lg" type="submit" id="send-btn">Send message <span aria-hidden="true">✦</span></button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <small class="form-note">Your message goes straight to our support team by email. We only use your details to reply.</small>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html#top" aria-label="Gen Babies home">
+        <img class="site-logo" src="logo.jpeg" alt="Gen Babies" height="72">
+      </a>
+      <p class="footer-tag">Curious today. A brighter tomorrow.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html#wonder">3D world</a>
+        <a href="index.html#friends">Our friends</a>
+        <a href="index.html#songs">Songs &amp; stories</a>
+        <a href="index.html#parents">For parents</a>
+        <a href="index.html#gen-a">Gen A Academy</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2026 Gen Babies™ · Curious today. A brighter tomorrow.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/contact.js" defer></script>
+</body>
+</html>
