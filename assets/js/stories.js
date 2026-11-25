@@ -9,6 +9,7 @@
   const { $, $$ } = GB;
 
   const SAMPLE = (text) => `<span class="sample">${text}</span>`;
+  const YT_LINK = '<a class="btn btn-gold btn-sm" href="https://www.youtube.com/@GenBabies" target="_blank" rel="noopener">Watch more on YouTube ↗</a>';
 
   const STORIES = {
     garden: {
@@ -19,6 +20,7 @@
         <p>One morning, a green leaf peeked into the garden. A butterfly landed nearby. “You grew!” she said.</p>
         <p>“A little every day,” smiled the seed.</p>
         <p><b>Wonder together:</b> What helps a plant grow? Can you find a leaf outside?</p>
+        ${YT_LINK}
         ${SAMPLE('Original sample story')}`,
     },
     star: {
@@ -28,6 +30,7 @@
         <p>“Goodnight, leaves. Goodnight, trees. Goodnight, busy little bees,” whispered the star.</p>
         <p>The moon smiled. The garden grew quiet. And the little star shone softly until morning.</p>
         <p><b>Try together:</b> Take three slow breaths and name one lovely thing from today.</p>
+        ${YT_LINK}
         ${SAMPLE('Original sample bedtime story')}`,
     },
   };
